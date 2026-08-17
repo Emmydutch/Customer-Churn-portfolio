@@ -1,0 +1,8 @@
+{
+  "brier_score": 0.11234769967004535,
+  "log_loss": 0.34762760565922807,
+  "expected_calibration_error": 0.020701280728392123,
+  "calibration_intercept": -0.001152644292061543,
+  "calibration_slope": 1.0627991729236324,
+  "calibration_bins": 10
+}

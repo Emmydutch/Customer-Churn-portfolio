@@ -1,0 +1,37 @@
+term,original_feature,background_transformed_mean,coefficient
+number_of_dependents,number_of_dependents,-1.4037282860535702e-14,-0.5806734490138831
+number_of_referrals,number_of_referrals,1.5667969233223458e-15,-1.5338145242036871
+tenure_in_months,tenure_in_months,-1.968230112944726e-15,-0.6818597707389371
+avg_monthly_long_distance_charges,avg_monthly_long_distance_charges,-1.2913455938846064e-16,0.0006119255967057691
+avg_monthly_gb_download,avg_monthly_gb_download,2.667892883752444e-16,-0.06782071411661877
+monthly_charge,monthly_charge,1.7387136109066415e-16,2.087533704117533
+total_refunds,total_refunds,-1.4349037521305427e-15,-0.04872118047475053
+total_extra_data_charges,total_extra_data_charges,-1.6199829588907864e-15,0.05856581636826787
+married_Yes,married,0.4830327985233565,1.5636898117627038
+offer_No Offer,offer,0.5504756495811444,-0.029687742218786894
+offer_Offer A,offer,0.0738321737895783,0.6984810645032598
+offer_Offer B,offer,0.11699559846656254,-0.1849069435313759
+offer_Offer C,offer,0.0589237540820673,-0.2967030838111173
+offer_Offer D,offer,0.08547493965639642,-0.5474918564474397
+offer_Offer E,offer,0.11429788442425103,0.2907510399363958
+phone_service_Yes,phone_service,0.9031662643759761,-1.737402360412481
+multiple_lines_Yes,multiple_lines,0.42183728524776376,-0.03423709354107461
+internet_type_Cable,internet_type,0.1178475081641346,0.11003107460047756
+internet_type_DSL,internet_type,0.23455913673150647,-0.07850926018466314
+internet_type_Fiber Optic,internet_type,0.4309243220218657,-1.0019261720159665
+internet_type_No Internet,internet_type,0.21666903308249325,0.9008468360310452
+online_security_Yes,online_security,0.2866676132329973,-0.6671809058426212
+online_backup_Yes,online_backup,0.3448814425670879,-0.45289696646622013
+device_protection_plan_Yes,device_protection_plan,0.3438875479199205,-0.2655142627396768
+premium_tech_support_Yes,premium_tech_support,0.2902172369728809,-0.7036895015653973
+streaming_tv_Yes,streaming_tv,0.38435325855459324,-0.345541678382728
+streaming_movies_Yes,streaming_movies,0.3879028822944768,-0.3703207508219707
+streaming_music_Yes,streaming_music,0.3532585545932131,-0.02353686589837002
+unlimited_data_Yes,unlimited_data,0.6737185858299021,0.14165921671140452
+contract_Month-to-Month,contract,0.5125656680391878,1.2049604959451696
+contract_One Year,contract,0.2200766718727815,-0.04415575080415384
+contract_Two Year,contract,0.2673576600880307,-1.2303622667098963
+paperless_billing_Yes,paperless_billing,0.5922192247621753,0.3278806942477307
+payment_method_Bank Withdrawal,payment_method,0.5550191679681954,-0.0675008332301036
+payment_method_Credit Card,payment_method,0.3903166264375976,-0.49570218433862906
+payment_method_Mailed Check,payment_method,0.05466420559420702,0.4936454959995535

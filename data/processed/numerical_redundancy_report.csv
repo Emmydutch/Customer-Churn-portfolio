@@ -1,0 +1,5 @@
+feature_1,feature_2,spearman_correlation,absolute_correlation,review_reason
+total_charges,total_revenue,0.9783658871617963,0.9783658871617963,Potential redundancy or shared accumulation with tenure
+tenure_in_months,total_revenue,0.9126473462505639,0.9126473462505639,Potential redundancy or shared accumulation with tenure
+tenure_in_months,total_charges,0.8894757959233502,0.8894757959233502,Potential redundancy or shared accumulation with tenure
+total_long_distance_charges,total_revenue,0.7775012348334905,0.7775012348334905,Potential redundancy or shared accumulation with tenure

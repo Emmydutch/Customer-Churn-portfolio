@@ -1,0 +1,38 @@
+{
+  "selected_threshold": 0.32,
+  "threshold_selection_population": "out-of-fold training predictions",
+  "minimum_recall_requirement": 0.8,
+  "threshold_rationale": "Selected the highest-precision out-of-fold threshold with recall at least 80%.",
+  "holdout_metrics": {
+    "threshold": 0.32,
+    "roc_auc": 0.8984809734170348,
+    "pr_auc": 0.7450568536742225,
+    "brier_score": 0.11234769967004535,
+    "accuracy": 0.8176011355571328,
+    "balanced_accuracy": 0.8220555943062338,
+    "precision": 0.6158415841584158,
+    "recall": 0.8315508021390374,
+    "f1": 0.7076222980659841,
+    "true_negatives": 841.0,
+    "false_positives": 194.0,
+    "false_negatives": 63.0,
+    "true_positives": 311.0,
+    "f2": 0.777111444277861,
+    "flagged_customers": 505.0,
+    "flagged_rate": 0.3584102200141945
+  },
+  "calibration_metrics": {
+    "brier_score": 0.11234769967004535,
+    "log_loss": 0.34762760565922807,
+    "expected_calibration_error": 0.020701280728392123,
+    "calibration_intercept": -0.001152644292061543,
+    "calibration_slope": 1.0627991729236324,
+    "calibration_bins": 10
+  },
+  "active_customers": 5174,
+  "active_high_risk_customers": 947,
+  "active_high_risk_rate": 0.1830305373018941,
+  "active_high_risk_monthly_charge_exposure": 68729.5,
+  "active_high_risk_cltv": 3931619.0,
+  "fairness_note": "Demographics are excluded from prediction and used only for subgroup auditing. Observed gaps require monitoring and do not by themselves establish discrimination."
+}

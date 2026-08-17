@@ -1,0 +1,65 @@
+feature,governance_status,rationale
+protection_support_service_count,Conditional — engineered aggregate,Potentially useful but duplicates component service indicators; compare in alternatives
+service_count,Conditional — engineered aggregate,Potentially useful but duplicates component service indicators; compare in alternatives
+age,Conditional — fairness review,Potentially sensitive demographic information requiring fairness assessment
+gender,Conditional — fairness review,Potentially sensitive demographic information requiring fairness assessment
+senior_citizen,Conditional — fairness review,Potentially sensitive demographic information requiring fairness assessment
+under_30,Conditional — fairness review,Potentially sensitive demographic information requiring fairness assessment
+cltv,Conditional — provenance unknown,Calculation method and availability date are not documented
+customer_value_segment,Conditional — provenance unknown,Calculation method and availability date are not documented
+satisfaction_score,Conditional — timing unknown,Perfect/near-perfect outcome separation suggests possible post-churn collection
+age_group,Descriptive — engineered reporting feature,Derived from other fields; exclude from baseline to avoid duplication or circular rules
+avg_revenue_per_tenure_month,Descriptive — engineered reporting feature,Derived from other fields; exclude from baseline to avoid duplication or circular rules
+contract_risk_group,Descriptive — engineered reporting feature,Derived from other fields; exclude from baseline to avoid duplication or circular rules
+customer_engagement_profile,Descriptive — engineered reporting feature,Derived from other fields; exclude from baseline to avoid duplication or circular rules
+descriptive_risk_points,Descriptive — engineered reporting feature,Derived from other fields; exclude from baseline to avoid duplication or circular rules
+descriptive_risk_segment,Descriptive — engineered reporting feature,Derived from other fields; exclude from baseline to avoid duplication or circular rules
+monthly_charge_band,Descriptive — engineered reporting feature,Derived from other fields; exclude from baseline to avoid duplication or circular rules
+referral_group,Descriptive — engineered reporting feature,Derived from other fields; exclude from baseline to avoid duplication or circular rules
+tenure_group,Descriptive — engineered reporting feature,Derived from other fields; exclude from baseline to avoid duplication or circular rules
+city,Descriptive — geography,Useful for hotspot analysis; baseline modeling risks sparse location proxies
+latitude,Descriptive — geography,Useful for hotspot analysis; baseline modeling risks sparse location proxies
+longitude,Descriptive — geography,Useful for hotspot analysis; baseline modeling risks sparse location proxies
+population,Descriptive — geography,Useful for hotspot analysis; baseline modeling risks sparse location proxies
+zip_code,Descriptive — geography,Useful for hotspot analysis; baseline modeling risks sparse location proxies
+avg_monthly_gb_download,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+avg_monthly_long_distance_charges,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+contract,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+dependents,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+device_protection_plan,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+internet_service,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+internet_type,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+married,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+monthly_charge,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+multiple_lines,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+number_of_dependents,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+number_of_referrals,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+offer,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+online_backup,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+online_security,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+paperless_billing,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+payment_method,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+phone_service,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+premium_tech_support,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+referred_a_friend,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+streaming_movies,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+streaming_music,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+streaming_tv,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+tenure_in_months,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+total_charges,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+total_extra_data_charges,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+total_long_distance_charges,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+total_refunds,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+total_revenue,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+unlimited_data,Eligible pre-churn candidate,Plausibly available before churn; subject to preprocessing and collinearity review
+country,Exclude — constant,Contains one value and provides no within-dataset variation
+quarter,Exclude — constant,Contains one value and provides no within-dataset variation
+state,Exclude — constant,Contains one value and provides no within-dataset variation
+active_flag,Exclude — direct leakage,Directly reveals whether the customer churned
+customer_status,Exclude — direct leakage,Directly reveals whether the customer churned
+churn_score,Exclude — external model output,Existing score has unknown training data and would create circularity
+customer_id,Exclude — identifier,Unique reference has no intended behavioral meaning
+churn_category,Exclude — post-outcome,Recorded only to explain a completed churn event
+churn_reason,Exclude — post-outcome,Recorded only to explain a completed churn event
+churn_flag,Target,Defines or numerically restates the churn outcome
+churn_label,Target,Defines or numerically restates the churn outcome

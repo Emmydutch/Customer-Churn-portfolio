@@ -1,0 +1,15 @@
+finding,evidence,validation_status,interpretation_limit
+Overall portfolio churn,26.54% (95% CI 25.52%–27.58%),Validated descriptive estimate,Snapshot estimate; not a time-series churn rate
+Customers in months 1–6 have greater churn exposure than customers in months 49–72,Risk difference 43.82% (95% CI 40.96%–46.61%); risk ratio 5.61 (95% CI 4.88–6.41),Validated association,Bivariate observational comparison; not causal
+Month-to-month customers have greater churn exposure than two-year customers,Risk difference 43.30% (95% CI 41.48%–45.04%); risk ratio 17.98 (95% CI 13.46–23.56),Validated association,Bivariate observational comparison; not causal
+San Diego customers have greater churn exposure than customers elsewhere,Risk difference 39.99% (95% CI 34.19%–45.40%); risk ratio 2.60 (95% CI 2.37–2.87),Validated association,Bivariate observational comparison; not causal
+Customers without dependents have greater churn exposure,Risk difference 26.04% (95% CI 24.24%–27.71%); risk ratio 5.00 (95% CI 4.12–6.00),Validated association,Bivariate observational comparison; not causal
+Fiber-optic customers have greater churn exposure than DSL customers,Risk difference 22.14% (95% CI 19.53%–24.66%); risk ratio 2.19 (95% CI 1.96–2.44),Validated association,Bivariate observational comparison; not causal
+Bank-withdrawal customers have greater churn exposure than credit-card customers,Risk difference 19.52% (95% CI 17.52%–21.48%); risk ratio 2.35 (95% CI 2.12–2.60),Validated association,Bivariate observational comparison; not causal
+Senior customers have greater churn exposure than non-senior customers,Risk difference 18.08% (95% CI 15.04%–21.15%); risk ratio 1.77 (95% CI 1.63–1.92),Validated association,Bivariate observational comparison; not causal
+Customers without online security have greater churn exposure,Risk difference 16.72% (95% CI 14.67%–18.68%); risk ratio 2.14 (95% CI 1.91–2.40),Validated association,Bivariate observational comparison; not causal
+Customers without premium technical support have greater churn exposure,Risk difference 16.02% (95% CI 13.96%–18.00%); risk ratio 2.06 (95% CI 1.84–2.29),Validated association,Bivariate observational comparison; not causal
+Churn-group difference in monthly_charge (mean),Difference 13.18 (bootstrap 95% CI 11.79–14.54),Validated difference,Distributional comparison; not causal
+Churn-group difference in tenure_in_months (median),Difference -28.00 (bootstrap 95% CI -30.00–-26.00),Validated difference,Distributional comparison; not causal
+Churn-group difference in total_revenue (median),"Difference -1,685.77 (bootstrap 95% CI -1,836.48–-1,549.12)",Validated difference,Distributional comparison; not causal
+Churn-group difference in cltv (median),Difference -382.00 (bootstrap 95% CI -478.00–-285.00),Validated difference,Distributional comparison; CLTV remains provenance-conditional

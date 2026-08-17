@@ -1,0 +1,5 @@
+feature,statistic,difference_churned_minus_not_churned,ci_lower,ci_upper,confidence_level,bootstrap_iterations,interval_excludes_zero
+monthly_charge,mean,13.17620856784228,11.791086312690755,14.540905449558164,0.95,3000,True
+tenure_in_months,median,-28.0,-30.0,-26.0,0.95,3000,True
+total_revenue,median,-1685.7749999999999,-1836.47725,-1549.1236250000004,0.95,3000,True
+cltv,median,-382.0,-478.0,-285.0,0.95,3000,True

@@ -1,0 +1,12 @@
+{
+  "explanation_model": "Production-refitted logistic regression pipeline",
+  "global_importance_method": "Holdout permutation importance using PR-AUC loss",
+  "local_method": "Exact mean-centered additive logistic log-odds decomposition",
+  "background_population": "All 7,043 customer records",
+  "background_probability": 0.10020231507146626,
+  "example_customer_id": "4927-WWOOZ",
+  "example_probability": 0.9556000100842355,
+  "active_customers_explained": 5174,
+  "shap_status": "SHAP package not installed; exact linear contribution decomposition used. No approximation is required for logistic regression.",
+  "interpretation_warning": "Explanations describe model behavior and conditional associations, not causal effects."
+}

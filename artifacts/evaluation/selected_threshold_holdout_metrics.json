@@ -1,0 +1,18 @@
+{
+  "threshold": 0.32,
+  "roc_auc": 0.8984809734170348,
+  "pr_auc": 0.7450568536742225,
+  "brier_score": 0.11234769967004535,
+  "accuracy": 0.8176011355571328,
+  "balanced_accuracy": 0.8220555943062338,
+  "precision": 0.6158415841584158,
+  "recall": 0.8315508021390374,
+  "f1": 0.7076222980659841,
+  "true_negatives": 841.0,
+  "false_positives": 194.0,
+  "false_negatives": 63.0,
+  "true_positives": 311.0,
+  "f2": 0.777111444277861,
+  "flagged_customers": 505.0,
+  "flagged_rate": 0.3584102200141945
+}
