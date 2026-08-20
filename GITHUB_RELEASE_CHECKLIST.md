@@ -32,11 +32,11 @@ Confirm that:
 
 ## GitHub release
 
-- [ ] Commit the Stage 17 repository-preparation changes
-- [ ] Push `main` to `origin`
-- [ ] Confirm the GitHub Actions workflow passes
+- [x] Commit the Stage 17 repository-preparation changes
+- [x] Push `main` to `origin`
+- [x] Confirm the GitHub Actions workflow passes
 - [ ] Add repository description, topics, and social preview
-- [ ] Deploy the app and add the public URL to `README.md` and `PORTFOLIO_SUMMARY.md`
+- [x] Deploy the app and add the public URL to `README.md` and `PORTFOLIO_SUMMARY.md`
 - [ ] Create release `v1.0.0`
 
 Community Cloud deployment values are documented in `DEPLOYMENT.md`.

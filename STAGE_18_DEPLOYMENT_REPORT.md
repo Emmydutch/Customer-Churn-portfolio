@@ -6,7 +6,7 @@
 
 **Validation date:** 20 August 2026
 
-**Status:** Ready for GitHub and Streamlit Community Cloud deployment
+**Status:** Publicly deployed and browser-verified
 
 ## Release Validation
 
@@ -46,18 +46,29 @@ The release includes:
 | Python | `3.12` |
 | Secrets | None |
 
-The final public URL must be added to `README.md` and `PORTFOLIO_SUMMARY.md` after the repository owner completes the GitHub-authorized Streamlit Community Cloud deployment.
+**Public URL:** https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/
+
+## Public Deployment Verification
+
+- All seven navigation routes opened in a real Edge browser.
+- The customer-risk form accepted a live submission and rendered its prediction result.
+- The Retention Simulator rendered its controls and scenario outputs; calculation interactions remain covered by the automated suite.
+- Desktop 1440×1000, tablet 1024×900, and mobile 390×844 had no horizontal overflow.
+- Executive Overview, Customer Risk Predictor, Geographic Analysis, and Retention Simulator rendered correctly in dark mode.
+- Fresh cloud sessions took approximately 21–51 seconds during the verification window; a warm desktop load completed in approximately 10 seconds.
+- Community Cloud wake and session startup introduced intermittent latency, but no application exception was observed in successful sessions.
 
 ## Presentation Assets
 
 - `PORTFOLIO_SUMMARY.md` provides the concise recruiter-facing project narrative.
 - `PRESENTATION_SCRIPT.md` provides a 90-second walkthrough and recommended demonstration order.
 - `artifacts/testing/screenshots/` contains desktop, tablet, mobile, and dark-theme evidence.
+- `artifacts/testing/deployed_screenshots/` contains equivalent evidence captured from the public application.
 - `DEPLOYMENT.md` contains local and cloud deployment instructions and troubleshooting guidance.
 
 ## Release Decision
 
-The application is technically ready for publication. Public deployment remains an account-authorized release action because Streamlit Community Cloud must be connected to the repository owner's GitHub account.
+The application is published and suitable for portfolio presentation. The remaining optional release action is creation of the GitHub `v1.0.0` tag and release entry.
 
 ---
 

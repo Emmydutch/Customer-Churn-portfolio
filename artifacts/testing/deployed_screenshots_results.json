@@ -1,0 +1,62 @@
+[
+  {
+    "viewport": "desktop-1440x1000",
+    "theme": "light",
+    "width": 1440,
+    "height": 1000,
+    "horizontal_overflow": false,
+    "load_seconds": 46.01,
+    "screenshot": "artifacts\\testing\\deployed_screenshots\\desktop-1440x1000.png"
+  },
+  {
+    "viewport": "tablet-1024x900",
+    "theme": "light",
+    "width": 1024,
+    "height": 900,
+    "horizontal_overflow": false,
+    "load_seconds": 51.38,
+    "screenshot": "artifacts\\testing\\deployed_screenshots\\tablet-1024x900.png"
+  },
+  {
+    "viewport": "mobile-390x844",
+    "theme": "light",
+    "width": 390,
+    "height": 844,
+    "horizontal_overflow": false,
+    "load_seconds": 20.7,
+    "screenshot": "artifacts\\testing\\deployed_screenshots\\mobile-390x844.png"
+  },
+  {
+    "viewport": "dark-desktop-1440x1000",
+    "theme": "dark",
+    "width": 1440,
+    "height": 1000,
+    "horizontal_overflow": false,
+    "load_seconds": 10.43,
+    "screenshot": "artifacts\\testing\\deployed_screenshots\\dark-desktop-1440x1000.png"
+  },
+  {
+    "viewport": "dark-predictor-1440x1000",
+    "theme": "dark",
+    "width": 1440,
+    "height": 1000,
+    "horizontal_overflow": false,
+    "screenshot": "artifacts\\testing\\deployed_screenshots\\dark-predictor-1440x1000.png"
+  },
+  {
+    "viewport": "dark-geography-1440x1000",
+    "theme": "dark",
+    "width": 1440,
+    "height": 1000,
+    "horizontal_overflow": false,
+    "screenshot": "artifacts\\testing\\deployed_screenshots\\dark-geography-1440x1000.png"
+  },
+  {
+    "viewport": "dark-retention-simulator-1440x1000",
+    "theme": "dark",
+    "width": 1440,
+    "height": 1000,
+    "horizontal_overflow": false,
+    "screenshot": "artifacts\\testing\\deployed_screenshots\\dark-retention-simulator-1440x1000.png"
+  }
+]

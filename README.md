@@ -5,6 +5,7 @@
 [![Project tests](https://github.com/Emmydutch/customer-churn-portfolio/actions/workflows/tests.yml/badge.svg)](https://github.com/Emmydutch/customer-churn-portfolio/actions/workflows/tests.yml)
 ![Tests](https://img.shields.io/badge/tests-24%20passed-2A9D8F)
 ![License](https://img.shields.io/badge/license-MIT-17345B)
+[![Live Streamlit app](https://img.shields.io/badge/Live%20dashboard-Open%20app-FF4B4B?logo=streamlit&logoColor=white)](https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/)
 
 An end-to-end telecom retention portfolio project combining business analysis, leakage-safe predictive modeling, explainable customer risk, campaign economics, and a presentation-ready Streamlit application.
 
@@ -15,7 +16,7 @@ An end-to-end telecom retention portfolio project combining business analysis, l
 <p align="center"><strong>Developed and Designed by Emmanuel Onuoha</strong></p>
 
 <p align="center">
-  <img src="artifacts/testing/screenshots/desktop-1440x1000.png" alt="Customer Churn Intelligence Streamlit dashboard" width="100%">
+  <img src="artifacts/testing/deployed_screenshots/desktop-1440x1000.png" alt="Deployed Customer Churn Intelligence Streamlit dashboard" width="100%">
 </p>
 
 ## At a Glance
@@ -35,7 +36,8 @@ An end-to-end telecom retention portfolio project combining business analysis, l
 
 ## Repository Guide
 
-- **Try the application locally:** follow [Run locally](#run-locally).
+- **Open the live dashboard:** [Customer Churn Intelligence](https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/).
+- **Run the application locally:** follow [Run locally](#run-locally).
 - **Review the full analysis:** open [`customer churn.ipynb`](customer%20churn.ipynb).
 - **Inspect reusable code:** browse [`src/`](src/).
 - **Review verification evidence:** read [`STAGE_16_VERIFICATION_REPORT.md`](STAGE_16_VERIFICATION_REPORT.md).
@@ -336,8 +338,8 @@ This structure is the completed local and deployment-ready project layout. Publi
 - [x] Stage 15 — Professional application design and local validation
 - [x] Stage 16 — Stability, interaction, performance, responsive, and reproducibility verification
 - [x] Stage 17 — Recruiter-friendly GitHub repository preparation
-- [ ] Stage 18 — Public deployment and presentation (local/cloud validation complete; public URL pending)
-- [ ] Public deployment
+- [x] Stage 18 — Public deployment, live verification, and presentation
+- [x] Public deployment
 
 ## Current Limitations
 
@@ -389,7 +391,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest tests -q --durations=15
 ```
 
-Responsive Edge-browser evidence is stored in `artifacts/testing/screenshots/` for desktop 1440×1000, tablet 1024×900, mobile 390×844, and dark-mode desktop 1440×1000. All checks passed without horizontal page overflow. The repeatable browser check is `tests/visual_viewport_check.py` and requires the application to be running on port 8501.
+Responsive Edge-browser evidence is stored in `artifacts/testing/screenshots/` for local validation and `artifacts/testing/deployed_screenshots/` for the public deployment. Desktop 1440×1000, tablet 1024×900, mobile 390×844, and dark-mode priority pages passed without horizontal page overflow. The repeatable browser checks are `tests/visual_viewport_check.py` and `tests/live_deployment_check.py`.
 
 The production dependencies are pinned in `requirements.txt`, and `runtime.txt` declares Python 3.12. A newly created isolated Python 3.12 environment installed those requirements, loaded the application data and model, reproduced the expected smoke-test probability, and served a healthy Streamlit endpoint before the temporary environment was removed.
 
@@ -399,7 +401,9 @@ The original project code, analysis, documentation, tests, and visual design are
 
 ## Live Application
 
-The application is validated locally with Python 3.12 and Streamlit 1.62.0. Public Streamlit Community Cloud deployment is the remaining release step. Once deployed, the URL will be added here and to `PORTFOLIO_SUMMARY.md`.
+**Public dashboard:** [Open Customer Churn Intelligence](https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/)
+
+The application is deployed on Streamlit Community Cloud with Python 3.12 and Streamlit 1.62.0. Live browser checks covered all seven navigation routes, prediction submission, retention controls, desktop/tablet/mobile rendering, and light/dark presentation. Fresh cloud sessions took approximately 21–51 seconds during verification; warm navigation was substantially faster. Community Cloud may sleep after inactivity, so the first visit can take longer than subsequent interactions.
 
 - Deployment instructions: [`DEPLOYMENT.md`](DEPLOYMENT.md)
 - Short presentation script: [`PRESENTATION_SCRIPT.md`](PRESENTATION_SCRIPT.md)

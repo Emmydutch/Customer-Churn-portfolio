@@ -13,6 +13,8 @@ Expected local address: `http://localhost:8501`
 
 Health endpoint: `http://localhost:8501/_stcore/health`
 
+Public deployment: https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/
+
 ## Streamlit Community Cloud
 
 Use the following deployment settings:
