@@ -114,6 +114,7 @@ def main() -> None:
         })
         for page, slug in [
             ("Customer Risk Predictor", "predictor"),
+            ("Decision Centre", "decision-centre"),
             ("Geographic Analysis", "geography"),
             ("Retention Simulator", "retention-simulator"),
         ]:

@@ -15,6 +15,7 @@ PAGES = [
     "Churn Drivers",
     "Geographic Analysis",
     "Customer Risk Predictor",
+    "Decision Centre",
     "Retention Simulator",
     "Methodology",
 ]
@@ -66,6 +67,20 @@ def test_retention_controls_update_scenario():
     updated_cost = next(metric.value for metric in rendered.metric if metric.label == "Campaign cost")
     assert not rendered.exception
     assert updated_cost != baseline_cost
+
+
+def test_decision_centre_respects_changed_capacity():
+    rendered = open_page("Decision Centre")
+    baseline = next(metric.value for metric in rendered.metric if metric.label == "Customers selected")
+    capacity = next(slider for slider in rendered.slider if slider.label == "Maximum customers to contact")
+    capacity.set_value(100)
+    apply_button = next(button for button in rendered.button if button.label == "Apply decision policy")
+    apply_button.click()
+    rendered.run(timeout=180)
+    updated = next(metric.value for metric in rendered.metric if metric.label == "Customers selected")
+    assert not rendered.exception
+    assert int(updated.replace(",", "")) <= 100
+    assert updated != baseline
 
 
 def test_warm_executive_render_performance():

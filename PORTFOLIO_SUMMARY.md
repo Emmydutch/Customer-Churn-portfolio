@@ -10,8 +10,9 @@ An end-to-end telecom retention project that turns a public-domain fictional cus
 - Selected a logistic model with 89.85% holdout ROC-AUC and 83.16% recall at the business threshold.
 - Added global and customer-level model explanations.
 - Developed retention scenarios linking customer risk, campaign cost, expected saves, and net benefit.
-- Delivered a seven-page Streamlit application with light/dark themes, responsive layouts, interactive filters, a customer predictor, geographic analysis, and a retention simulator.
-- Verified the project with 24 automated tests, live browser interactions, responsive viewport checks, and a clean Python 3.12 deployment environment.
+- Added a prescriptive Decision Centre that ranks positive expected-value interventions under editable budget and campaign-capacity constraints.
+- Delivered an eight-page Streamlit application with light/dark themes, responsive layouts, interactive filters, a customer predictor, geographic analysis, a Decision Centre, and a retention simulator.
+- Verified the project with 34 automated tests, live browser interactions, responsive viewport checks, and a clean Python 3.12 deployment environment.
 
 ## Business Outcome
 

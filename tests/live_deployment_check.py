@@ -22,6 +22,7 @@ PAGES = [
     "Churn Drivers",
     "Geographic Analysis",
     "Customer Risk Predictor",
+    "Decision Centre",
     "Retention Simulator",
     "Methodology",
 ]

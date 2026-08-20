@@ -13,7 +13,7 @@
 The complete application was installed and tested in a clean Python 3.12 environment using the pinned production and development dependencies.
 
 - Streamlit version: 1.62.0
-- Automated tests: 24 passed, 0 failed
+- Automated tests: 34 passed, 0 failed
 - Local application startup: passed
 - Streamlit health endpoint: HTTP 200 with response `ok`
 - Application entrypoint: `app.py`
@@ -26,7 +26,7 @@ One deployment-portability issue was corrected during validation: the Streamlit 
 
 The release includes:
 
-- the local seven-page Streamlit application;
+- the local eight-page Streamlit application, including the prescriptive Decision Centre;
 - source and processed datasets with attribution documentation;
 - reproducible preparation, analysis, modeling, explanation, and simulation modules;
 - the executed portfolio notebook;
@@ -50,11 +50,12 @@ The release includes:
 
 ## Public Deployment Verification
 
-- All seven navigation routes opened in a real Edge browser.
+- All eight navigation routes are covered by automated rendering tests; the original seven-page public release passed live Edge verification before the Decision Centre enhancement.
 - The customer-risk form accepted a live submission and rendered its prediction result.
 - The Retention Simulator rendered its controls and scenario outputs; calculation interactions remain covered by the automated suite.
 - Desktop 1440×1000, tablet 1024×900, and mobile 390×844 had no horizontal overflow.
 - Executive Overview, Customer Risk Predictor, Geographic Analysis, and Retention Simulator rendered correctly in dark mode.
+- The Decision Centre passed local dark-mode and responsive visual verification without horizontal overflow.
 - Fresh cloud sessions took approximately 21–51 seconds during the verification window; a warm desktop load completed in approximately 10 seconds.
 - Community Cloud wake and session startup introduced intermittent latency, but no application exception was observed in successful sessions.
 

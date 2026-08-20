@@ -3,7 +3,7 @@
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Streamlit 1.62.0](https://img.shields.io/badge/Streamlit-1.62.0-FF4B4B?logo=streamlit&logoColor=white)
 [![Project tests](https://github.com/Emmydutch/customer-churn-portfolio/actions/workflows/tests.yml/badge.svg)](https://github.com/Emmydutch/customer-churn-portfolio/actions/workflows/tests.yml)
-![Tests](https://img.shields.io/badge/tests-24%20passed-2A9D8F)
+![Tests](https://img.shields.io/badge/tests-34%20passed-2A9D8F)
 ![License](https://img.shields.io/badge/license-MIT-17345B)
 [![Live Streamlit app](https://img.shields.io/badge/Live%20dashboard-Open%20app-FF4B4B?logo=streamlit&logoColor=white)](https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/)
 
@@ -30,7 +30,7 @@ An end-to-end telecom retention portfolio project combining business analysis, l
 | Holdout ROC-AUC | 89.85% |
 | Holdout recall | 83.16% |
 | Base scenario net benefit | $18,775 |
-| Automated tests | 24 passed |
+| Automated tests | 34 passed |
 
 > The retention result is a transparent planning scenario, not realized causal impact. Campaign lift must be validated with a controlled pilot.
 
@@ -317,7 +317,7 @@ Customer Churn/
 `-- TelcoCustomerChurn.csv      # Public-domain fictional source data
 ```
 
-This structure is the completed local and deployment-ready project layout. Public hosting will add only the external application URL and final release metadata.
+This structure is the completed local and publicly deployed project layout.
 
 ## Project Progress
 
@@ -340,6 +340,7 @@ This structure is the completed local and deployment-ready project layout. Publi
 - [x] Stage 17 — Recruiter-friendly GitHub repository preparation
 - [x] Stage 18 — Public deployment, live verification, and presentation
 - [x] Public deployment
+- [x] Post-deployment enhancement — Prescriptive Decision Centre
 
 ## Current Limitations
 
@@ -355,15 +356,22 @@ The detailed analytical workflow, checks, definitions, and interpretations are m
 
 ## Application Status
 
-The presentation-ready Streamlit application is implemented in `app.py`. It includes seven interactive views:
+The presentation-ready Streamlit application is implemented in `app.py`. It includes eight interactive views:
 
 - Executive Overview
 - Customer Analysis
 - Churn Drivers
 - Geographic Analysis
 - Customer Risk Predictor
+- Decision Centre
 - Retention Simulator
 - Methodology
+
+### Prescriptive Decision Centre
+
+The Decision Centre converts churn probabilities into a transparent, budget-constrained retention plan. It calculates probability-weighted expected saves, retained gross margin, intervention cost, expected net benefit, and ROI for each eligible active customer. Management can change campaign capacity, expected budget, business objective, reach, acceptance, incremental save rate, value horizon, margin, and cost assumptions.
+
+The default policy selects 500 customers under a $15,000 expected budget, with approximately 40.7 expected incremental saves, $11,561 expected campaign cost, and $17,473 expected net benefit. These are planning estimates rather than realized causal results. Customer identifiers are excluded from the public decision table and download; the exported plan is aggregated by intervention.
 
 The interface includes Emmanuel Onuoha's photograph and authorship branding, a user-controlled light/dark theme, cached data and model loading, responsive layouts, consistent formatting, explanatory notes, empty-state handling, model-level and customer-level explanations, responsible-use guidance, and transparent campaign assumptions.
 
@@ -378,11 +386,11 @@ python -m streamlit run app.py
 
 Streamlit will display the local address, normally `http://localhost:8501`.
 
-The deployment environment is validated with Streamlit 1.62.0. All seven navigation views and the submitted customer-prediction workflow render without application exceptions.
+The deployment environment is validated with Streamlit 1.62.0. All eight navigation views, the submitted customer-prediction workflow, and the Decision Centre capacity control render without application exceptions.
 
 ## Testing and Verification
 
-Stage 16 is documented in [`STAGE_16_VERIFICATION_REPORT.md`](STAGE_16_VERIFICATION_REPORT.md). The automated suite contains 24 passing tests covering source-data reconciliation, filters, predictions, missing and unseen inputs, campaign calculations, invalid assumptions, all seven application pages, live interactions, theme switching, and performance.
+Stage 16 is documented in [`STAGE_16_VERIFICATION_REPORT.md`](STAGE_16_VERIFICATION_REPORT.md). The expanded automated suite contains 34 passing tests covering source-data reconciliation, filters, predictions, missing and unseen inputs, campaign calculations, prescriptive decision economics, budget and capacity constraints, sensitivity, invalid assumptions, all eight application pages, live interactions, theme switching, and performance.
 
 Run the tests locally:
 

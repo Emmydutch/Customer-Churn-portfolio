@@ -23,7 +23,7 @@ python -m streamlit run app.py
 
 Confirm that:
 
-- all 24 automated tests pass;
+- all 34 automated tests pass;
 - every application page opens in light and dark themes;
 - the predictor returns a probability and explanation;
 - the retention simulator responds to changed assumptions;

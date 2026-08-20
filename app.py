@@ -16,6 +16,14 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+from src.decision_engine import (
+    OBJECTIVES,
+    build_decision_sensitivity,
+    score_retention_decisions,
+    select_decision_portfolio,
+    summarize_decision_portfolio,
+)
+
 
 ROOT = Path(__file__).resolve().parent
 DATA_PATH = ROOT / "data" / "processed" / "telco_customer_churn_features.csv"
@@ -33,6 +41,7 @@ NAVIGATION = [
     "Churn Drivers",
     "Geographic Analysis",
     "Customer Risk Predictor",
+    "Decision Centre",
     "Retention Simulator",
     "Methodology",
 ]
@@ -464,6 +473,236 @@ def predictor_page(data: dict[str, pd.DataFrame]) -> None:
         st.caption("Contributions are exact additive logistic-model effects on the log-odds scale. They explain this prediction but do not prove causality.")
 
 
+def decision_centre_page(data: dict[str, pd.DataFrame]) -> None:
+    campaign = data["retention"].copy()
+    page_header(
+        "Decision Centre",
+        "Allocate limited retention resources using transparent expected-value rules",
+    )
+    st.info(
+        "This is a scenario-based decision policy, not a causal uplift model. "
+        "Incremental save rates must be validated with a randomized campaign pilot."
+    )
+
+    with st.form("decision_policy_form"):
+        st.subheader("Decision constraints and assumptions")
+        constraint_left, constraint_right = st.columns(2, gap="large")
+        with constraint_left:
+            objective = st.selectbox("Decision objective", list(OBJECTIVES))
+            capacity = st.slider(
+                "Maximum customers to contact", 25, len(campaign), min(500, len(campaign)), 25
+            )
+            budget = st.slider("Expected campaign budget ($)", 1_000, 40_000, 15_000, 500)
+            reach_rate = st.slider("Reach rate", 0, 100, 75, 5) / 100
+            acceptance_rate = st.slider("Offer acceptance", 0, 100, 50, 5) / 100
+        with constraint_right:
+            incremental_save_rate = st.slider(
+                "Incremental save rate", 5, 70, 35, 5,
+                help="Assumed additional retention caused by the intervention among accepting customers.",
+            ) / 100
+            horizon = st.slider("Retention value horizon (months)", 1, 24, 12)
+            margin_rate = st.slider("Gross margin rate", 10, 100, 70, 5) / 100
+            contact_cost = st.number_input(
+                "Contact cost per targeted customer ($)", 0.0, 100.0, 4.0, 1.0
+            )
+            offer_multiplier = st.slider("Offer cost multiplier", 0.25, 2.0, 1.0, 0.05)
+        st.form_submit_button("Apply decision policy", type="primary", width="stretch")
+
+    assumptions = {
+        "reach_rate": reach_rate,
+        "acceptance_rate": acceptance_rate,
+        "incremental_save_rate": incremental_save_rate,
+        "retention_horizon_months": horizon,
+        "gross_margin_rate": margin_rate,
+        "contact_cost_per_target": contact_cost,
+        "offer_cost_multiplier": offer_multiplier,
+    }
+    scored = score_retention_decisions(campaign, **assumptions)
+    selected, ranked = select_decision_portfolio(
+        scored, budget=budget, capacity=capacity, objective=objective
+    )
+    summary = summarize_decision_portfolio(selected, ranked)
+
+    st.subheader("Recommended campaign portfolio")
+    a, b, c = st.columns(3)
+    a.metric("Customers selected", f"{summary['selected_customers']:,}", f"of {len(campaign):,} eligible")
+    b.metric("Expected campaign cost", f"${summary['expected_campaign_cost']:,.0f}", f"${budget - summary['expected_campaign_cost']:,.0f} budget remaining")
+    c.metric("Expected customers saved", f"{summary['expected_customers_saved']:,.1f}")
+    a, b = st.columns(2)
+    a.metric("Expected net benefit", f"${summary['expected_net_benefit']:,.0f}")
+    b.metric(
+        "Expected ROI",
+        "N/A" if np.isnan(summary["expected_roi"]) else f"{summary['expected_roi']:.1%}",
+    )
+
+    if selected.empty:
+        st.warning("No customer has positive expected economics within the current budget and capacity assumptions.")
+        return
+
+    action_summary = (
+        selected.groupby("primary_intervention", as_index=False)
+        .agg(
+            customers=("customer_id", "size"),
+            expected_cost=("expected_campaign_cost", "sum"),
+            expected_saves=("expected_incremental_saves", "sum"),
+            expected_net_benefit=("expected_net_benefit", "sum"),
+            recommended_action=("recommended_action", "first"),
+        )
+        .sort_values("expected_net_benefit", ascending=False)
+    )
+    chart = px.bar(
+        action_summary.sort_values("expected_net_benefit"),
+        x="expected_net_benefit",
+        y="primary_intervention",
+        orientation="h",
+        color="expected_saves",
+        color_continuous_scale=["#DCEAF6", BLUE],
+        title="Expected net benefit by recommended intervention",
+        labels={
+            "expected_net_benefit": "Expected net benefit ($)",
+            "primary_intervention": "Intervention",
+            "expected_saves": "Expected saves",
+        },
+    )
+    st.plotly_chart(style_figure(chart, 430), width="stretch")
+
+    st.subheader("Budget allocation and next-best actions")
+    st.dataframe(
+        action_summary,
+        hide_index=True,
+        width="stretch",
+        column_config={
+            "primary_intervention": "Intervention",
+            "customers": st.column_config.NumberColumn("Customers", format="%d"),
+            "expected_cost": st.column_config.NumberColumn("Expected cost", format="$%.0f"),
+            "expected_saves": st.column_config.NumberColumn("Expected saves", format="%.1f"),
+            "expected_net_benefit": st.column_config.NumberColumn("Expected net benefit", format="$%.0f"),
+            "recommended_action": "Next-best action",
+        },
+    )
+    st.download_button(
+        "Download aggregated decision plan",
+        action_summary.to_csv(index=False).encode("utf-8"),
+        file_name="aggregated_retention_decision_plan.csv",
+        mime="text/csv",
+        help="The public application exports an aggregated plan without customer identifiers.",
+    )
+
+    st.subheader("Highest-priority anonymized candidates")
+    candidate_view = selected[
+        [
+            "decision_rank",
+            "decision_category",
+            "customer_value_segment",
+            "descriptive_risk_segment",
+            "primary_intervention",
+            "predicted_churn_probability",
+            "monthly_charge",
+            "expected_campaign_cost",
+            "expected_net_benefit",
+        ]
+    ].head(25)
+    st.dataframe(
+        candidate_view,
+        hide_index=True,
+        width="stretch",
+        column_config={
+            "decision_rank": st.column_config.NumberColumn("Rank", format="%d"),
+            "decision_category": "Decision",
+            "customer_value_segment": "Value segment",
+            "descriptive_risk_segment": "Risk segment",
+            "primary_intervention": "Next-best action group",
+            "predicted_churn_probability": st.column_config.ProgressColumn(
+                "Churn probability", format="percent", min_value=0, max_value=1
+            ),
+            "monthly_charge": st.column_config.NumberColumn("Monthly charge", format="$%.2f"),
+            "expected_campaign_cost": st.column_config.NumberColumn("Expected cost", format="$%.2f"),
+            "expected_net_benefit": st.column_config.NumberColumn("Expected net benefit", format="$%.2f"),
+        },
+    )
+
+    with st.expander("Selection governance check"):
+        governance_rows = []
+        for field, label in [("gender", "Gender"), ("senior_citizen", "Senior citizen")]:
+            for group, subset in ranked.groupby(field, observed=True):
+                governance_rows.append({
+                    "monitoring_dimension": label,
+                    "group": str(group),
+                    "eligible_customers": int(len(subset)),
+                    "selected_customers": int(subset["selected_for_campaign"].sum()),
+                    "selection_rate": float(subset["selected_for_campaign"].mean()),
+                })
+        governance = pd.DataFrame(governance_rows)
+        st.dataframe(
+            governance,
+            hide_index=True,
+            width="stretch",
+            column_config={
+                "monitoring_dimension": "Monitoring dimension",
+                "group": "Group",
+                "eligible_customers": st.column_config.NumberColumn("Eligible", format="%d"),
+                "selected_customers": st.column_config.NumberColumn("Selected", format="%d"),
+                "selection_rate": st.column_config.ProgressColumn(
+                    "Selection rate", format="percent", min_value=0, max_value=1
+                ),
+            },
+        )
+        st.caption(
+            "Gender and senior status are not ranking inputs. These descriptive rates support human review; "
+            "they do not by themselves establish fairness or discrimination."
+        )
+
+    common_assumptions = assumptions.copy()
+    common_assumptions.pop("incremental_save_rate")
+    sensitivity_rates = sorted({
+        max(0.05, incremental_save_rate - 0.15),
+        incremental_save_rate,
+        min(0.90, incremental_save_rate + 0.15),
+    })
+    sensitivity = build_decision_sensitivity(
+        campaign,
+        save_rates=sensitivity_rates,
+        budget=budget,
+        capacity=capacity,
+        objective=objective,
+        common_assumptions=common_assumptions,
+    )
+    sensitivity["scenario"] = [
+        "Selected" if np.isclose(rate, incremental_save_rate)
+        else "Lower" if rate < incremental_save_rate
+        else "Upper"
+        for rate in sensitivity["incremental_save_rate"]
+    ]
+    sensitivity_chart = px.bar(
+        sensitivity,
+        x="scenario",
+        y="expected_net_benefit",
+        color="incremental_save_rate",
+        text="selected_customers",
+        title="Decision sensitivity to incremental save rate",
+        labels={
+            "scenario": "Save-rate assumption",
+            "expected_net_benefit": "Expected net benefit ($)",
+            "incremental_save_rate": "Save rate",
+            "selected_customers": "Selected",
+        },
+    )
+    st.plotly_chart(style_figure(sensitivity_chart, 370), width="stretch")
+
+    with st.expander("How the decision policy works"):
+        st.markdown(
+            """
+            1. Estimate each customer's probability-weighted incremental saves using the selected reach, acceptance, and save-rate assumptions.
+            2. Convert expected saves into retained gross margin using monthly charge, value horizon, and margin rate.
+            3. Subtract expected contact and accepted-offer costs.
+            4. Exclude customers with non-positive expected net benefit.
+            5. Rank the remaining customers by the selected objective and admit them while budget and capacity remain.
+
+            The policy is deterministic and auditable. It supports planning but does not prove that an intervention will cause retention. Use a holdout control group, monitor subgroup outcomes, and prohibit punitive decisions based on churn risk.
+            """
+        )
+
+
 def simulator_page(data: dict[str, pd.DataFrame]) -> None:
     campaign = data["retention"].sort_values("predicted_churn_probability", ascending=False)
     page_header("Retention Simulator", "Test transparent campaign assumptions before committing retention budget")
@@ -511,7 +750,7 @@ def simulator_page(data: dict[str, pd.DataFrame]) -> None:
 
 def methodology_page(data: dict[str, pd.DataFrame]) -> None:
     page_header("Methodology", "Definitions, analytical controls, validation evidence, and responsible use")
-    tabs = st.tabs(["Data & definitions", "Preparation", "Model", "Limitations & responsible use"])
+    tabs = st.tabs(["Data & definitions", "Preparation", "Model", "Decision policy", "Limitations & responsible use"])
     with tabs[0]:
         st.markdown("""
         **Source:** supplied `TelcoCustomerChurn.csv`, containing 7,043 California telecom customer records for Q3.
@@ -535,6 +774,12 @@ def methodology_page(data: dict[str, pd.DataFrame]) -> None:
         Outcome-revealing or uncertain fields—including Customer Status, Churn Reason, Churn Category, Churn Score, Satisfaction Score, CLTV, Total Revenue, identifiers, and location coordinates—are excluded from prediction.
         """)
     with tabs[3]:
+        st.markdown("""
+        The Decision Centre applies a transparent constrained ranking after prediction. Customer-level expected value combines churn probability, editable campaign reach and acceptance, an assumed incremental save rate, retained gross margin, and expected intervention cost.
+
+        Only positive expected-value candidates can be selected. The policy then ranks candidates by the chosen business objective and admits them while expected budget and contact capacity remain. This is a scenario-based prescriptive policy, not an uplift or causal-treatment model.
+        """)
+    with tabs[4]:
         st.markdown("""
         - Results describe one California snapshot and may not generalize across time or markets.
         - No campaign-history data exists; simulator outputs are assumptions, not realized causal impact.
@@ -560,6 +805,7 @@ def main() -> None:
         "Churn Drivers": drivers_page,
         "Geographic Analysis": geography_page,
         "Customer Risk Predictor": predictor_page,
+        "Decision Centre": decision_centre_page,
         "Retention Simulator": simulator_page,
         "Methodology": methodology_page,
     }

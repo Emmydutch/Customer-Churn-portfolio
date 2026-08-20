@@ -45,7 +45,7 @@ Deployment steps:
 - `.streamlit/config.toml` contains the application theme and headless server configuration.
 - The source dataset and all model artifacts required at runtime are committed to the repository.
 - No secrets or external databases are required.
-- All 24 automated tests pass under the clean deployment environment.
+- All 34 automated tests pass under the clean deployment environment.
 
 ## Troubleshooting
 
