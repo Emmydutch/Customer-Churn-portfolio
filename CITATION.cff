@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use or reference this portfolio project, please cite it as follows."
+title: "Telecom Customer Churn Intelligence"
+type: software
+authors:
+  - family-names: "Onuoha"
+    given-names: "Emmanuel"
+repository-code: "https://github.com/Emmydutch/customer-churn-portfolio"
+license: MIT
+version: 1.0.0
+date-released: 2026-08-20
+abstract: >-
+  An end-to-end telecom churn portfolio project combining reproducible data
+  preparation, exploratory analysis, leakage-safe predictive modeling,
+  explainable customer risk, retention scenario analysis, and an interactive
+  Streamlit application.
+keywords:
+  - customer churn
+  - telecom
+  - machine learning
+  - explainable AI
+  - Streamlit
+  - retention analytics

@@ -11,7 +11,7 @@ An end-to-end telecom retention project that turns a public-domain fictional cus
 - Added global and customer-level model explanations.
 - Developed retention scenarios linking customer risk, campaign cost, expected saves, and net benefit.
 - Delivered a seven-page Streamlit application with light/dark themes, responsive layouts, interactive filters, a customer predictor, geographic analysis, and a retention simulator.
-- Verified the project with 24 automated tests, real browser viewport checks, and a clean Python 3.12 environment.
+- Verified the project with 24 automated tests, real browser viewport checks, and a clean Python 3.12 deployment environment.
 
 ## Business Outcome
 
@@ -28,6 +28,7 @@ Python, pandas, scikit-learn, Plotly, Streamlit, Jupyter, pytest, and Selenium.
 ## Presentation
 
 - **Local application:** `streamlit run app.py`
+- **GitHub repository:** https://github.com/Emmydutch/customer-churn-portfolio
 - **Live demo:** Pending public deployment
 - **Detailed documentation:** `README.md`
 - **Verification report:** `STAGE_16_VERIFICATION_REPORT.md`

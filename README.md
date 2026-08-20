@@ -1,16 +1,52 @@
 # Telecom Customer Churn Intelligence
 
+![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![Streamlit 1.62.0](https://img.shields.io/badge/Streamlit-1.62.0-FF4B4B?logo=streamlit&logoColor=white)
+[![Project tests](https://github.com/Emmydutch/customer-churn-portfolio/actions/workflows/tests.yml/badge.svg)](https://github.com/Emmydutch/customer-churn-portfolio/actions/workflows/tests.yml)
+![Tests](https://img.shields.io/badge/tests-24%20passed-2A9D8F)
+![License](https://img.shields.io/badge/license-MIT-17345B)
+
+An end-to-end telecom retention portfolio project combining business analysis, leakage-safe predictive modeling, explainable customer risk, campaign economics, and a presentation-ready Streamlit application.
+
 <p align="center">
   <img src="assets/emmanuel-onuoha.jpg" alt="Emmanuel Onuoha" width="150">
 </p>
 
 <p align="center"><strong>Developed and Designed by Emmanuel Onuoha</strong></p>
 
+<p align="center">
+  <img src="artifacts/testing/screenshots/desktop-1440x1000.png" alt="Customer Churn Intelligence Streamlit dashboard" width="100%">
+</p>
+
+## At a Glance
+
+| Portfolio outcome | Result |
+|---|---:|
+| Customers analyzed | 7,043 |
+| Observed churn rate | 26.54% |
+| High-risk active customers | 947 |
+| Selected threshold | 0.32 |
+| Holdout ROC-AUC | 89.85% |
+| Holdout recall | 83.16% |
+| Base scenario net benefit | $18,775 |
+| Automated tests | 24 passed |
+
+> The retention result is a transparent planning scenario, not realized causal impact. Campaign lift must be validated with a controlled pilot.
+
+## Repository Guide
+
+- **Try the application locally:** follow [Run locally](#run-locally).
+- **Review the full analysis:** open [`customer churn.ipynb`](customer%20churn.ipynb).
+- **Inspect reusable code:** browse [`src/`](src/).
+- **Review verification evidence:** read [`STAGE_16_VERIFICATION_REPORT.md`](STAGE_16_VERIFICATION_REPORT.md).
+- **Read the concise portfolio story:** see [`PORTFOLIO_SUMMARY.md`](PORTFOLIO_SUMMARY.md).
+- **Confirm data provenance:** see [`DATASET_NOTICE.md`](DATASET_NOTICE.md).
+
 ## Project Overview
 
-This portfolio project develops an evidence-based customer churn intelligence solution for a telecommunications company. It will identify where churn is concentrated, investigate why customers leave, estimate pre-churn customer risk without outcome leakage, and translate the findings into practical retention actions.
+This portfolio project delivers an evidence-based customer churn intelligence solution for a telecommunications company. It identifies where churn is concentrated, investigates why customers leave, estimates pre-churn customer risk without outcome leakage, and translates the findings into practical retention actions.
 
-The completed solution will combine a reproducible analytical notebook with an interactive Streamlit application for executive and operational decision-making.
+The completed solution combines a reproducible analytical notebook with an interactive Streamlit application for executive and operational decision-making.
 
 > **Central business question:** Which customers are most likely to churn, why are they leaving, and what actions could improve retention?
 
@@ -299,6 +335,8 @@ This structure is the completed local and deployment-ready project layout. Publi
 - [x] Stage 14 — Interactive Streamlit dashboard
 - [x] Stage 15 — Professional application design and local validation
 - [x] Stage 16 — Stability, interaction, performance, responsive, and reproducibility verification
+- [x] Stage 17 — Recruiter-friendly GitHub repository preparation
+- [ ] Stage 18 — Public deployment and presentation (local/cloud validation complete; public URL pending)
 - [ ] Public deployment
 
 ## Current Limitations
@@ -338,7 +376,7 @@ python -m streamlit run app.py
 
 Streamlit will display the local address, normally `http://localhost:8501`.
 
-The installed project environment was validated with Streamlit 1.52.2. All seven navigation views and the submitted customer-prediction workflow render without application exceptions.
+The deployment environment is validated with Streamlit 1.62.0. All seven navigation views and the submitted customer-prediction workflow render without application exceptions.
 
 ## Testing and Verification
 
@@ -354,6 +392,18 @@ python -m pytest tests -q --durations=15
 Responsive Edge-browser evidence is stored in `artifacts/testing/screenshots/` for desktop 1440×1000, tablet 1024×900, mobile 390×844, and dark-mode desktop 1440×1000. All checks passed without horizontal page overflow. The repeatable browser check is `tests/visual_viewport_check.py` and requires the application to be running on port 8501.
 
 The production dependencies are pinned in `requirements.txt`, and `runtime.txt` declares Python 3.12. A newly created isolated Python 3.12 environment installed those requirements, loaded the application data and model, reproduced the expected smoke-test probability, and served a healthy Streamlit endpoint before the temporary environment was removed.
+
+## Repository Licence and Citation
+
+The original project code, analysis, documentation, tests, and visual design are released under the [MIT License](LICENSE). The fictional source dataset is separately identified as Public Domain in [`DATASET_NOTICE.md`](DATASET_NOTICE.md). Citation metadata is provided in [`CITATION.cff`](CITATION.cff).
+
+## Live Application
+
+The application is validated locally with Python 3.12 and Streamlit 1.62.0. Public Streamlit Community Cloud deployment is the remaining release step. Once deployed, the URL will be added here and to `PORTFOLIO_SUMMARY.md`.
+
+- Deployment instructions: [`DEPLOYMENT.md`](DEPLOYMENT.md)
+- Short presentation script: [`PRESENTATION_SCRIPT.md`](PRESENTATION_SCRIPT.md)
+- Deployment validation report: [`STAGE_18_DEPLOYMENT_REPORT.md`](STAGE_18_DEPLOYMENT_REPORT.md)
 
 ---
 

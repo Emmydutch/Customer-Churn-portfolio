@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import time
+from pathlib import Path
 
 import pytest
 from streamlit.testing.v1 import AppTest
@@ -17,10 +18,11 @@ PAGES = [
     "Retention Simulator",
     "Methodology",
 ]
+APP_PATH = Path(__file__).resolve().parents[1] / "app.py"
 
 
 def open_page(page: str) -> AppTest:
-    app = AppTest.from_file("app.py", default_timeout=180)
+    app = AppTest.from_file(APP_PATH, default_timeout=180)
     app.run()
     navigation = next(radio for radio in app.radio if page in radio.options)
     navigation.set_value(page)
