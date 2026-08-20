@@ -1,0 +1,16 @@
+{
+  "id": "onuohaemmanuel/telecom-churn-prescriptive-retention",
+  "title": "Telecom Churn: Prescriptive Retention Decisions",
+  "code_file": "telecom-churn-prescriptive-retention.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "onuohaemmanuel/telecom-customer-churn-portfolio-data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

@@ -6,6 +6,7 @@
 ![Tests](https://img.shields.io/badge/tests-34%20passed-2A9D8F)
 ![License](https://img.shields.io/badge/license-MIT-17345B)
 [![Live Streamlit app](https://img.shields.io/badge/Live%20dashboard-Open%20app-FF4B4B?logo=streamlit&logoColor=white)](https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/)
+[![Kaggle profile](https://img.shields.io/badge/Kaggle-onuohaemmanuel-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/onuohaemmanuel)
 
 An end-to-end telecom retention portfolio project combining business analysis, leakage-safe predictive modeling, explainable customer risk, campaign economics, and a presentation-ready Streamlit application.
 
@@ -304,6 +305,8 @@ Customer Churn/
 |   `-- testing/                # Responsive screenshots and viewport evidence
 |-- assets/                     # Emmanuel Onuoha profile image
 |-- data/processed/             # Clean, engineered, and validated analytical exports
+|-- kaggle/                     # Self-contained Kaggle notebook and publication metadata
+|-- scripts/                    # Kaggle package builder and notebook validator
 |-- src/                        # Reusable preparation, analysis, modeling, and retention modules
 |-- tests/                      # Automated data, model, Streamlit, and browser checks
 |-- app.py                      # Interactive Streamlit application
@@ -416,6 +419,15 @@ The application is deployed on Streamlit Community Cloud with Python 3.12 and St
 - Deployment instructions: [`DEPLOYMENT.md`](DEPLOYMENT.md)
 - Short presentation script: [`PRESENTATION_SCRIPT.md`](PRESENTATION_SCRIPT.md)
 - Deployment validation report: [`STAGE_18_DEPLOYMENT_REPORT.md`](STAGE_18_DEPLOYMENT_REPORT.md)
+
+## Kaggle Edition
+
+The recruiter-facing Kaggle edition condenses the project into a reproducible, output-free notebook that runs against an attached companion dataset. It preserves the analytical narrative, adds the prescriptive Decision Centre, links back to the live application and GitHub repository, and clearly separates the dataset's Public Domain status from the project's MIT-licensed original code.
+
+- Kaggle profile: [onuohaemmanuel](https://www.kaggle.com/onuohaemmanuel)
+- Notebook source: [`kaggle/telecom-churn-prescriptive-retention.ipynb`](kaggle/telecom-churn-prescriptive-retention.ipynb)
+- Publication and rebuild guide: [`kaggle/README.md`](kaggle/README.md)
+- Validation: 214 cells, including 70 executable code cells, completed with zero notebook errors in an isolated workspace.
 
 ---
 

@@ -13,6 +13,7 @@ An end-to-end telecom retention project that turns a public-domain fictional cus
 - Added a prescriptive Decision Centre that ranks positive expected-value interventions under editable budget and campaign-capacity constraints.
 - Delivered an eight-page Streamlit application with light/dark themes, responsive layouts, interactive filters, a customer predictor, geographic analysis, a Decision Centre, and a retention simulator.
 - Verified the project with 34 automated tests, live browser interactions, responsive viewport checks, and a clean Python 3.12 deployment environment.
+- Prepared and fully executed a self-contained Kaggle edition with a prescriptive retention Decision Centre and explicit source/licence attribution.
 
 ## Business Outcome
 
@@ -31,6 +32,7 @@ Python, pandas, scikit-learn, Plotly, Streamlit, Jupyter, pytest, and Selenium.
 - **Local application:** `streamlit run app.py`
 - **GitHub repository:** https://github.com/Emmydutch/Customer-Churn-portfolio
 - **Live demo:** https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/
+- **Kaggle profile:** https://www.kaggle.com/onuohaemmanuel
 - **Detailed documentation:** `README.md`
 - **Verification reports:** `STAGE_16_VERIFICATION_REPORT.md` and `STAGE_18_DEPLOYMENT_REPORT.md`
 

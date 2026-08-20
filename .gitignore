@@ -25,3 +25,7 @@ Thumbs.db
 
 # Logs
 *.log
+# Kaggle credentials and local CLI state
+.kaggle/
+kaggle.json
+/kaggle/*.zip

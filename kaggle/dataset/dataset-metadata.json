@@ -1,0 +1,17 @@
+{
+  "title": "Telecom Churn Portfolio Data and Source Modules",
+  "subtitle": "Fictional telecom customer data with reproducible portfolio analysis modules",
+  "description": "Companion input package for Emmanuel Onuoha's Telecom Customer Churn notebook. The fictional IBM/Maven source dataset is identified as Public Domain. Original Python modules are copyright Emmanuel Onuoha and released under the included MIT License.",
+  "id": "onuohaemmanuel/telecom-customer-churn-portfolio-data",
+  "licenses": [
+    {
+      "name": "other"
+    }
+  ],
+  "resources": [
+    {
+      "path": "TelcoCustomerChurn.csv",
+      "description": "Fictional public-domain telecom customer churn source data."
+    }
+  ]
+}
