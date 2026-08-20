@@ -50,12 +50,13 @@ The release includes:
 
 ## Public Deployment Verification
 
-- All eight navigation routes are covered by automated rendering tests; the original seven-page public release passed live Edge verification before the Decision Centre enhancement.
+- All eight navigation routes opened in a live Edge session after the Decision Centre deployment.
 - The customer-risk form accepted a live submission and rendered its prediction result.
 - The Retention Simulator rendered its controls and scenario outputs; calculation interactions remain covered by the automated suite.
 - Desktop 1440×1000, tablet 1024×900, and mobile 390×844 had no horizontal overflow.
 - Executive Overview, Customer Risk Predictor, Geographic Analysis, and Retention Simulator rendered correctly in dark mode.
 - The Decision Centre passed local dark-mode and responsive visual verification without horizontal overflow.
+- The deployed Decision Centre rendered successfully in the live navigation audit; exact budget/capacity recalculation is covered by the deterministic AppTest suite.
 - Fresh cloud sessions took approximately 21–51 seconds during the verification window; a warm desktop load completed in approximately 10 seconds.
 - Community Cloud wake and session startup introduced intermittent latency, but no application exception was observed in successful sessions.
 

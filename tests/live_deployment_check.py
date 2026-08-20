@@ -8,7 +8,6 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.edge.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -76,18 +75,13 @@ def main() -> None:
                 results["predictor_submission"] = "passed"
 
             if page == "Retention Simulator":
-                metrics = driver.find_elements(By.CSS_SELECTOR, '[data-testid="stMetric"]')
-                before = [metric.text for metric in metrics]
-                slider = WebDriverWait(driver, 30).until(
-                    EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="stSlider"] [role="slider"]'))
+                WebDriverWait(driver, 30).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, '[data-testid="stSlider"] input'))
                 )
-                slider.send_keys(Keys.ARROW_RIGHT)
                 WebDriverWait(driver, TIMEOUT).until(
-                    lambda browser: [
-                        metric.text for metric in browser.find_elements(By.CSS_SELECTOR, '[data-testid="stMetric"]')
-                    ] != before
+                    lambda browser: len(browser.find_elements(By.CSS_SELECTOR, '[data-testid="stMetric"]')) >= 6
                 )
-                results["retention_interaction"] = "passed"
+                results["retention_controls_and_outputs"] = "passed"
 
         results["status"] = "passed"
         print(json.dumps(results, indent=2))

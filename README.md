@@ -411,7 +411,7 @@ The original project code, analysis, documentation, tests, and visual design are
 
 **Public dashboard:** [Open Customer Churn Intelligence](https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/)
 
-The application is deployed on Streamlit Community Cloud with Python 3.12 and Streamlit 1.62.0. Live browser checks covered all seven navigation routes, prediction submission, retention controls, desktop/tablet/mobile rendering, and light/dark presentation. Fresh cloud sessions took approximately 21–51 seconds during verification; warm navigation was substantially faster. Community Cloud may sleep after inactivity, so the first visit can take longer than subsequent interactions.
+The application is deployed on Streamlit Community Cloud with Python 3.12 and Streamlit 1.62.0. Live browser checks covered all eight navigation routes, prediction submission, Decision Centre rendering, retention controls and outputs, desktop/tablet/mobile rendering, and light/dark presentation. Fresh cloud sessions took approximately 21–51 seconds during verification; warm navigation was substantially faster. Community Cloud may sleep after inactivity, so the first visit can take longer than subsequent interactions.
 
 - Deployment instructions: [`DEPLOYMENT.md`](DEPLOYMENT.md)
 - Short presentation script: [`PRESENTATION_SCRIPT.md`](PRESENTATION_SCRIPT.md)
