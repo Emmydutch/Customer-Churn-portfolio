@@ -14,6 +14,7 @@ An end-to-end telecom retention project that turns a public-domain fictional cus
 - Delivered an eight-page Streamlit application with light/dark themes, responsive layouts, interactive filters, a customer predictor, geographic analysis, a Decision Centre, and a retention simulator.
 - Verified the project with 34 automated tests, live browser interactions, responsive viewport checks, and a clean Python 3.12 deployment environment.
 - Prepared and fully executed a self-contained Kaggle edition with a prescriptive retention Decision Centre and explicit source/licence attribution.
+- Produced an original Academia-ready independent technical report and visual-statistics appendix in PDF and editable DOCX formats.
 
 ## Business Outcome
 

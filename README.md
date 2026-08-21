@@ -304,6 +304,7 @@ Customer Churn/
 |   |-- retention/              # Campaign population and scenario economics
 |   `-- testing/                # Responsive screenshots and viewport evidence
 |-- assets/                     # Emmanuel Onuoha profile image
+|-- academia/                   # Technical report, visual appendix, metadata, and PDFs
 |-- data/processed/             # Clean, engineered, and validated analytical exports
 |-- kaggle/                     # Self-contained Kaggle notebook and publication metadata
 |-- scripts/                    # Kaggle package builder and notebook validator
@@ -428,6 +429,16 @@ The recruiter-facing Kaggle edition condenses the project into a reproducible, o
 - Notebook source: [`kaggle/telecom-churn-prescriptive-retention.ipynb`](kaggle/telecom-churn-prescriptive-retention.ipynb)
 - Publication and rebuild guide: [`kaggle/README.md`](kaggle/README.md)
 - Validation: 214 cells, including 70 executable code cells, completed with zero notebook errors in an isolated workspace.
+
+## Academia Publication Package
+
+The project includes an original, recruiter- and practitioner-facing independent technical report for Academia.edu. It presents the verified statistical findings, leakage-safe model, threshold rationale, prescriptive retention framework, limitations, and reproducibility statement without claiming peer review or causal impact.
+
+- Main report: [`academia/output/Emmanuel_Onuoha_Telecom_Churn_Technical_Report.pdf`](academia/output/Emmanuel_Onuoha_Telecom_Churn_Technical_Report.pdf)
+- Visual appendix: [`academia/output/Emmanuel_Onuoha_Telecom_Churn_Visual_Appendix.pdf`](academia/output/Emmanuel_Onuoha_Telecom_Churn_Visual_Appendix.pdf)
+- Academia title, abstract, tags, biography, and citation: [`academia/ACADEMIA_METADATA.md`](academia/ACADEMIA_METADATA.md)
+- Reproducible build and validation instructions: [`academia/README.md`](academia/README.md)
+- Validation: 11-page main PDF and 6-page visual appendix, both accompanied by editable DOCX versions and verified for required text and rendering.
 
 ---
 

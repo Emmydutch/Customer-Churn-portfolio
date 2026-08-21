@@ -1,0 +1,37 @@
+{
+  "pdf": [
+    {
+      "file": "Emmanuel_Onuoha_Telecom_Churn_Technical_Report.pdf",
+      "pages": 11,
+      "characters": 24000,
+      "size_bytes": 1004802
+    },
+    {
+      "file": "Emmanuel_Onuoha_Telecom_Churn_Visual_Appendix.pdf",
+      "pages": 6,
+      "characters": 2318,
+      "size_bytes": 898283
+    }
+  ],
+  "docx": [
+    {
+      "file": "Emmanuel_Onuoha_Telecom_Churn_Technical_Report.docx",
+      "paragraphs": 110,
+      "characters": 22845,
+      "size_bytes": 853069
+    },
+    {
+      "file": "Emmanuel_Onuoha_Telecom_Churn_Visual_Appendix.docx",
+      "paragraphs": 27,
+      "characters": 1724,
+      "size_bytes": 776954
+    }
+  ],
+  "preview": [
+    "Emmanuel_Onuoha_Telecom_Churn_Technical_Report-page-1.png",
+    "Emmanuel_Onuoha_Telecom_Churn_Technical_Report-page-3.png",
+    "Emmanuel_Onuoha_Telecom_Churn_Technical_Report-page-7.png",
+    "Emmanuel_Onuoha_Telecom_Churn_Technical_Report-page-11.png"
+  ],
+  "status": "passed"
+}
