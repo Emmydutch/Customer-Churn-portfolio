@@ -15,6 +15,7 @@ Independent Data Analytics Portfolio Project
 - GitHub: https://github.com/Emmydutch/Customer-Churn-portfolio
 - Interactive application: https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/
 - Kaggle profile: https://www.kaggle.com/onuohaemmanuel
+- Academia profile: https://independent.academia.edu/emmanuelonuoha24
 
 > Publication status: Independent technical report. This work has not been peer reviewed. The dataset is fictional and the retention outcomes are scenario estimates rather than observed causal effects.
 

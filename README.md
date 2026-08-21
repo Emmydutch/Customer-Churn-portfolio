@@ -7,6 +7,7 @@
 ![License](https://img.shields.io/badge/license-MIT-17345B)
 [![Live Streamlit app](https://img.shields.io/badge/Live%20dashboard-Open%20app-FF4B4B?logo=streamlit&logoColor=white)](https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/)
 [![Kaggle profile](https://img.shields.io/badge/Kaggle-onuohaemmanuel-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/onuohaemmanuel)
+[![Academia profile](https://img.shields.io/badge/Academia-Emmanuel%20Onuoha-41454A)](https://independent.academia.edu/emmanuelonuoha24)
 
 An end-to-end telecom retention portfolio project combining business analysis, leakage-safe predictive modeling, explainable customer risk, campaign economics, and a presentation-ready Streamlit application.
 
@@ -437,6 +438,7 @@ The project includes an original, recruiter- and practitioner-facing independent
 - Main report: [`academia/output/Emmanuel_Onuoha_Telecom_Churn_Technical_Report.pdf`](academia/output/Emmanuel_Onuoha_Telecom_Churn_Technical_Report.pdf)
 - Visual appendix: [`academia/output/Emmanuel_Onuoha_Telecom_Churn_Visual_Appendix.pdf`](academia/output/Emmanuel_Onuoha_Telecom_Churn_Visual_Appendix.pdf)
 - Academia title, abstract, tags, biography, and citation: [`academia/ACADEMIA_METADATA.md`](academia/ACADEMIA_METADATA.md)
+- Academia profile: [independent.academia.edu/emmanuelonuoha24](https://independent.academia.edu/emmanuelonuoha24)
 - Reproducible build and validation instructions: [`academia/README.md`](academia/README.md)
 - Validation: 11-page main PDF and 6-page visual appendix, both accompanied by editable DOCX versions and verified for required text and rendering.
 

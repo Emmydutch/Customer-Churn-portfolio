@@ -42,6 +42,7 @@ Emmanuel Onuoha is a data analytics practitioner focused on transforming busines
 - GitHub repository: https://github.com/Emmydutch/Customer-Churn-portfolio
 - Interactive Streamlit application: https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/
 - Kaggle profile: https://www.kaggle.com/onuohaemmanuel
+- Academia profile: https://independent.academia.edu/emmanuelonuoha24
 
 ## Suggested citation
 

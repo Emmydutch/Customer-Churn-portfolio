@@ -34,6 +34,7 @@ Python, pandas, scikit-learn, Plotly, Streamlit, Jupyter, pytest, and Selenium.
 - **GitHub repository:** https://github.com/Emmydutch/Customer-Churn-portfolio
 - **Live demo:** https://customer-churn-portfolio-z3hvzwkxs3yu8zvenx9yuk.streamlit.app/
 - **Kaggle profile:** https://www.kaggle.com/onuohaemmanuel
+- **Academia profile:** https://independent.academia.edu/emmanuelonuoha24
 - **Detailed documentation:** `README.md`
 - **Verification reports:** `STAGE_16_VERIFICATION_REPORT.md` and `STAGE_18_DEPLOYMENT_REPORT.md`
 

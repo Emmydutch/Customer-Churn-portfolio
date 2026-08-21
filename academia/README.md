@@ -26,3 +26,5 @@ Generated outputs are written to `academia/output/`:
 - Check the generated PDF preview and hyperlinks before publishing.
 
 See `ACADEMIA_METADATA.md` for the upload title, abstract, tags, biography, citation, and profile post.
+
+Academia profile: https://independent.academia.edu/emmanuelonuoha24
